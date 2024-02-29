@@ -10,11 +10,6 @@ function intentar() {
   ROW.className = "row";
   const INTENTO = leerIntento();
   
-  if (INTENTO === palabra ) {
-    terminar("GANASTE!");
-    return
-}
-
   for (let i in palabra) {
     const SPAN = document.createElement("span");
     SPAN.className = "letter";
@@ -35,6 +30,11 @@ function intentar() {
     ROW.appendChild(SPAN);
   }
   GRID.appendChild(ROW);
+
+  if (INTENTO === palabra ) {
+    terminar("GANASTE!");
+    return
+}
 
   intentos--
     if (intentos==0){
